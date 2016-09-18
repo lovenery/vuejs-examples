@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/vue/1.0.26/vue.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <h1>{{ fullname }}</h1>
+    <input type="text" placeholder="first-name" v-model="firstname">
+    <input type="text" placeholder="last-name" v-model="lastname">
+
+    <script type="text/javascript">
+        new Vue({
+            el: 'body',
+            data: {
+              firstname: 'Aa',
+              lastname: 'Bb',
+              fullname: 'Aa Bb',
+            },
+            // watch: {
+            //   firstname: function (firstname) {
+            //     this.fullname = firstname + ' ' + this.lastname;
+            //   },
+            //   lastname: function (lastname) {
+            //     this.fullname = this.firstname + ' ' + lastname;
+            //   }
+            // },
+            computed: {
+              fullname: function () {
+                return this.firstname + ' ' + this.lastname;
+              }
+            }
+        })
+    </script>
+  </body>
+</html>

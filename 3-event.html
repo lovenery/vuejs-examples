@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/vue/1.0.26/vue.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div id="app">
+      <form v-on:submit.prevent="handleIt"> <!-- v-on:submit.prevent = @submit.prevent -->
+        <button type="submit">送出</button>
+      </form>
+
+      <button type="button" @click="updateCount">按了幾下:{{ count }}</button>
+    </div>
+
+    <script type="text/javascript">
+        new Vue({
+          el: '#app',
+          data: {
+            count: 0
+          },
+          methods: {
+            updateCount: function () {
+              this.count+=1;
+            },
+            handleIt: function () {
+              alert('hi');
+            },
+            // handleIt: function (e) {
+            //   alert('hi');
+            //   e.preventDefault();
+            // }
+          }
+        })
+    </script>
+  </body>
+</html>
